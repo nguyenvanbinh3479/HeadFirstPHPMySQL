@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>add score</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
         ($screenshot_type =='image/jpeg') || 
         ($screenshot_type =='image/pipeg')
          ||($screenshot_type='image/png')) &&($screenshot_size > 0) && ($screenshot_size<= GW_MAXFILESIZE)){
-           if ($_FILES['file']['erros'] ==0){
+           if ($_FILES['screenshot']['error'] ==0){
             $target = GW_UPLOADPATH . $screenshot;
             if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $target)) { 
               $dbc = mysqli_connect('localhost', 'root', '', 'gwdb');
@@ -35,7 +36,7 @@
               echo '<p><strong>Name:</strong> ' . $name . '<br />';
               echo '<strong>Score:</strong> ' . $score . '</p>';
               echo '<img src="' . $target .'" alt="score image"/></p>';
-              echo '<p><a href="index1.php">&lt;&lt; Back to high scores</a></p>';
+              echo '<p><a href="index.php">&lt;&lt; Back to high scores</a></p>';
               // Clear the score data to clear the form
               $name = "";
               $score = "";
