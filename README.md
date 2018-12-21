@@ -1,0 +1,2 @@
+# HeadFirstPHPMySQL
+Ready to take your static HTML web pages to the next level, and build database-driven sites using PHP and MySQL? Then Head First PHP &amp; MySQL is your hands-on guide to getting dynamic sites running, fast. Get your hands dirty building real applications, ranging from a video game high-score message board to an online dating site. By the time you're through, you'll be validating forms, working with session IDs and cookies, performing database queries and joins, handling file I/O operations, and more.
