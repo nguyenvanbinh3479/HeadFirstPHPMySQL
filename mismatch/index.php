@@ -1,40 +1,16 @@
 <?php
-  session_start();
+  // Start the session
+  require_once('startsession.php');
 
-  // If the session vars aren't set, try to set them with a cookie
-  if (!isset($_SESSION['user_id'])) {
-    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
-      $_SESSION['user_id'] = $_COOKIE['user_id'];
-      $_SESSION['username'] = $_COOKIE['username'];
-    }
-  }
-?>
+  // Insert the page header
+  $page_title = 'Where opposites attract!';
+  require_once('header.php');
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Mismatch - Where opposites attract!</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-  <h3>Mismatch - Where opposites attract!</h3>
-
-<?php
   require_once('appvars.php');
   require_once('connectvars.php');
 
-  // Generate the navigation menu
-  if (isset($_SESSION['username'])) {
-    echo '&#10084; <a href="viewprofile.php">View Profile</a><br />';
-    echo '&#10084; <a href="editprofile.php">Edit Profile</a><br />';
-    echo '&#10084; <a href="logout.php">Log Out (' . $_SESSION['username'] . ')</a>';
-  }
-  else {
-    echo '&#10084; <a href="login.php">Log In</a><br />';
-    echo '&#10084; <a href="signup.php">Sign Up</a>';
-  }
+  // Show the navigation menu
+  require_once('navmenu.php');
 
   // Connect to the database 
   $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
@@ -65,5 +41,7 @@
   mysqli_close($dbc);
 ?>
 
-</body> 
-</html>
+<?php
+  // Insert the page footer
+  require_once('footer.php');
+?>
