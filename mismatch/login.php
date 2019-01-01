@@ -43,20 +43,11 @@
       }
     }
   }
-?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Mismatch - Log In</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-  <h3>Mismatch - Log In</h3>
+  // Insert the page header
+  $page_title = 'Log In';
+  require_once('header.php');
 
-<?php
   // If the session var is empty, show any error message and the log-in form; otherwise confirm the log-in
   if (empty($_SESSION['user_id'])) {
     echo '<p class="error">' . $error_msg . '</p>';
@@ -81,5 +72,7 @@
   }
 ?>
 
-</body>
-</html>
+<?php
+  // Insert the page footer
+  require_once('footer.php');
+?>
