@@ -49,11 +49,11 @@
     <fieldset>
       <legend>Registration Info</legend>
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" value="<?php if (!empty($username)) echo $username; ?>" /><br />
+      <input type="text" name="username" value="<?php if (!empty($username)) echo $username; ?>" /><br />
       <label for="password1">Password:</label>
-      <input type="password" id="password1" name="password1" /><br />
+      <input type="password" name="password1" /><br />
       <label for="password2">Password (retype):</label>
-      <input type="password" id="password2" name="password2" /><br />
+      <input type="password" name="password2" /><br />
     </fieldset>
     <input type="submit" value="Sign Up" name="submit" />
   </form>
